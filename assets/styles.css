@@ -74,6 +74,29 @@
   --g-blur:blur(10px) saturate(115%);
 }
 
+/* WARM — soft colourful glass, full background wash */
+:root[data-theme="warm"]{
+  --heading:#0D4F72;
+  --ink:#0F2A35;
+  --ink-mid:#46626E;
+  --accent:#0A7B79;
+  --teal-soft:#E4F5F4;
+  --hair:rgba(13,79,114,.13);
+
+  --page-1:#F7FCFC; --page-2:#FDFAF3; --page-3:#F4FAFA;
+  --g-bg:rgba(255,255,255,.62);
+  --g-bd:rgba(255,255,255,.72);
+  --g-hi:rgba(255,255,255,.85);
+  --g-sh:0 12px 40px -14px rgba(13,79,114,.28);
+  --g-sh-hv:0 22px 50px -18px rgba(13,79,114,.4);
+  --field:#F8FCFC;
+  --field-bd:rgba(13,79,114,.18);
+  --form-bg:rgba(255,255,255,.12);
+  --orb-op:1;
+  --ctl-bg:rgba(255,255,255,.7);
+  --g-blur:blur(18px) saturate(150%);
+}
+
 :root[data-theme="dark"]{
   --heading:#EAF4F7;
   --ink:#DCE9EE;
@@ -91,10 +114,14 @@
   --field:rgba(255,255,255,.06);
   --field-bd:rgba(255,255,255,.18);
   --form-bg:rgba(255,255,255,.08);
-  --orb-op:.5;
-  --ctl-bg:rgba(255,255,255,.09);
+  --orb-op:.72;
+  --ctl-bg:rgba(255,255,255,.12);
   --notice-bg:rgba(242,181,32,.12); --notice-bd:#F2B520; --notice-tx:#F6D687;
 }
+:root[data-theme="dark"] .orb--1{opacity:.55}
+:root[data-theme="dark"] .orb--2{opacity:.48}
+:root[data-theme="dark"] .orb--3{opacity:.42}
+:root[data-theme="dark"] .orb--4{opacity:.38}
 
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:130px;-webkit-text-size-adjust:100%}
@@ -203,8 +230,15 @@ fieldset{min-width:0}
 .nav.is-stuck{box-shadow:0 8px 30px -18px rgba(0,0,0,.5)}
 .nav__inner{display:flex;align-items:center;gap:1.4rem;min-height:76px}
 
-.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;flex:none}
-.brand img{width:46px;height:46px}
+.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;flex:none}
+.brand__mark{
+  width:52px;height:52px;flex:none;display:grid;place-items:center;border-radius:14px;
+  background:radial-gradient(circle at 32% 22%,rgba(255,216,103,.42),rgba(242,181,32,.14) 58%,transparent 72%);
+  box-shadow:0 4px 20px -6px rgba(242,181,32,.5),inset 0 1px 0 rgba(255,255,255,.35)}
+.brand__mark svg{width:44px;height:auto;filter:drop-shadow(0 2px 8px rgba(206,139,5,.4))}
+:root[data-theme="dark"] .brand__mark{
+  background:radial-gradient(circle at 32% 22%,rgba(255,216,103,.32),rgba(242,181,32,.12) 58%,transparent 72%);
+  box-shadow:0 4px 22px -4px rgba(242,181,32,.35),inset 0 1px 0 rgba(255,255,255,.12)}
 .brand__txt{display:flex;flex-direction:column;line-height:1.05}
 .brand__txt strong{font-family:var(--font-d);font-size:1.42rem;font-weight:800;color:var(--heading);letter-spacing:.03em}
 .brand__txt small{font-size:.66rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--accent)}
@@ -230,18 +264,25 @@ fieldset{min-width:0}
 .iconbtn:hover{transform:translateY(-1px);background:var(--teal-soft)}
 .iconbtn.is-done{background:var(--accent);color:#fff;border-color:var(--accent)}
 .iconbtn svg{width:20px;height:20px;fill:currentColor}
-/* the appearance button showed the icon of the theme in use — replaced by .theme-select */
-
-/* ── theme select (compact dropdown, all screen sizes) ───── */
-.theme-select{
-  height:44px;min-width:5.2rem;max-width:6.5rem;padding:0 .65rem 0 .55rem;
-  font:inherit;font-size:.82rem;font-weight:600;font-family:var(--font-d);
-  color:var(--heading);background:var(--ctl-bg);border:1px solid var(--g-bd);
-  border-radius:12px;cursor:pointer;appearance:none;-webkit-appearance:none;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2.5'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right .45rem center;padding-right:1.4rem}
-.theme-select:focus{outline:2px solid var(--accent);outline-offset:2px}
-:root[data-theme="dark"] .theme-select{background-color:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.18)}
+/* ── theme picker (visible in all themes, including dark) ── */
+.theme-pick{
+  display:inline-flex;align-items:center;gap:2px;padding:3px;border-radius:12px;
+  background:var(--ctl-bg);border:1px solid var(--g-bd);flex:none}
+.theme-pick__btn{
+  font:inherit;font-family:var(--font-d);font-size:.68rem;font-weight:700;
+  letter-spacing:.02em;padding:.42rem .45rem;border:0;border-radius:9px;
+  cursor:pointer;background:transparent;color:var(--ink-mid);line-height:1;
+  transition:background .18s,color .18s,box-shadow .18s}
+.theme-pick__btn:hover{color:var(--heading)}
+.theme-pick__btn[aria-current="true"]{
+  background:var(--teal-soft);color:var(--heading);
+  box-shadow:0 1px 4px rgba(0,0,0,.08)}
+:root[data-theme="dark"] .theme-pick{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2)}
+:root[data-theme="dark"] .theme-pick__btn{color:rgba(255,255,255,.65)}
+:root[data-theme="dark"] .theme-pick__btn:hover{color:#fff}
+:root[data-theme="dark"] .theme-pick__btn[aria-current="true"]{
+  background:rgba(79,216,211,.22);color:#fff;box-shadow:0 0 0 1px rgba(79,216,211,.35)}
+:root[data-theme="warm"] .theme-pick__btn[aria-current="true"]{background:rgba(242,181,32,.22);color:var(--heading)}
 
 /* ── dropdowns (legacy — nav no longer uses these) ─────── */
 .drop{position:relative}
@@ -320,7 +361,11 @@ fieldset{min-width:0}
 
 .hero__art{position:relative;display:grid;place-items:center}
 .hero__scene{padding:1.4rem 1.1rem 1.6rem;width:min(460px,100%);display:grid;gap:.9rem;justify-items:center}
-.hero__scene-logo{width:118px;height:auto}
+.hero__scene-logo{
+  width:132px;height:auto;
+  filter:drop-shadow(0 6px 20px rgba(242,181,32,.45))}
+.hero__scene-logo path{stroke:url(#heroGold)}
+.js .hero__scene-logo path{opacity:1}
 .hero__scene img{width:100%;height:auto;border-radius:var(--r-sm)}
 .hero__scene-tag{font-family:var(--font-d);font-weight:700;font-size:1.2rem;color:var(--heading);text-align:center}
 
@@ -640,7 +685,7 @@ fieldset{min-width:0}
      24×7 still shows in the top bar and inside the open menu; calling is
      covered by the floating buttons. */
   .nav__act .btn--sm,.nav__act .nav__badge{display:none}
-  .theme-select{height:42px;min-width:4.8rem;font-size:.78rem}
+  .theme-pick__btn{font-size:.62rem;padding:.38rem .35rem}
   .topbar{font-size:.76rem}
   .topbar__inner{justify-content:center;gap:.6rem}
   .equip{flex-direction:column;align-items:flex-start}
@@ -675,7 +720,8 @@ fieldset{min-width:0}
 @media (max-width:430px){
   .nav__inner{gap:.7rem;min-height:66px}
   .nav__act{gap:.4rem}
-  .brand img{width:38px;height:38px}
+  .brand__mark{width:46px;height:46px;border-radius:12px}
+  .brand__mark svg{width:38px}
   .brand__txt strong{font-size:1.2rem}
   .brand__txt small{font-size:.6rem;letter-spacing:.07em}
   .iconbtn,.burger{width:42px;height:42px}

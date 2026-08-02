@@ -139,23 +139,24 @@ document.addEventListener('keydown', e => {
 (function theme () {
   const root = document.documentElement;
   const meta = $('meta[name="theme-color"]');
-  const select = $('#themeSelect');
+  const options = $$('[data-theme-set]');
   const bar = { calm: '#0A6E86', warm: '#0E9C99', dark: '#071A24' };
 
   const paint = mode => {
     root.dataset.theme = mode;
     if (meta) meta.content = bar[mode] || bar.calm;
-    if (select && select.value !== mode) select.value = mode;
+    options.forEach(o => o.setAttribute('aria-current', String(o.dataset.themeSet === mode)));
   };
 
   paint(['calm', 'warm', 'dark'].includes(root.dataset.theme) ? root.dataset.theme : 'calm');
 
-  select?.addEventListener('change', () => {
+  options.forEach(opt => opt.addEventListener('click', () => {
+    const mode = opt.dataset.themeSet;
     root.classList.add('theming');
-    paint(select.value);
-    try { localStorage.setItem('jai-theme', select.value); } catch (e) { /* private mode */ }
+    paint(mode);
+    try { localStorage.setItem('jai-theme', mode); } catch (e) { /* private mode */ }
     setTimeout(() => root.classList.remove('theming'), 400);
-  });
+  }));
 
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
     let saved = null;
@@ -238,6 +239,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(fals
 if (reduced) {
   // Nothing moves; make sure nothing stays hidden either.
   $$('[data-anim]').forEach(el => el.classList.add('is-in'));
+  document.documentElement.classList.add('logo-drawn');
 } else {
 
   /* --- logo draws itself in, once, on load --- */
@@ -246,7 +248,8 @@ if (reduced) {
       draw: ['0 0', '0 1'],
       duration: 1400,
       delay: stagger(90),
-      ease: 'inOutQuad'
+      ease: 'inOutQuad',
+      onComplete: () => document.documentElement.classList.add('logo-drawn')
     });
   }
 

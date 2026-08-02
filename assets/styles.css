@@ -376,6 +376,22 @@ fieldset{min-width:0}
 .inc li::before{content:"";position:absolute;left:0;top:.52em;width:9px;height:5px;
   border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg)}
 
+/* ── service accordions ─────────────────────────────────── */
+.svc-acc{display:grid;gap:.65rem}
+.svc-acc__item{padding:0;overflow:hidden;border-radius:var(--r-md)}
+.svc-acc__item summary{
+  list-style:none;cursor:pointer;padding:1.05rem 2.4rem 1.05rem 1.25rem;position:relative;
+  font-family:var(--font-d);font-weight:600;font-size:1.02rem;color:var(--heading)}
+.svc-acc__item summary::-webkit-details-marker{display:none}
+.svc-acc__item summary::after{content:"";position:absolute;right:1.1rem;top:50%;
+  width:10px;height:10px;border-right:2.5px solid var(--accent);border-bottom:2.5px solid var(--accent);
+  transform:translateY(-70%) rotate(45deg);transition:transform .25s ease}
+.svc-acc__item[open] summary::after{transform:translateY(-20%) rotate(-135deg)}
+.svc-acc__item[open] summary{border-bottom:1px solid var(--hair)}
+.svc-acc__body{padding:0 1.25rem 1.15rem}
+.svc-acc__body p{color:var(--ink-mid);font-size:.94rem;margin-top:.85rem}
+.svc-acc__body .inc{margin-top:.65rem;padding-top:.75rem}
+
 .card--val{padding-top:2.7rem}
 .card--val::before{background:var(--gold)}
 .val__no{position:absolute;top:1.1rem;right:1.35rem;font-family:var(--font-d);font-weight:800;
@@ -478,6 +494,13 @@ fieldset{min-width:0}
   background:var(--hair);transition:transform .18s,background .18s}
 .carousel__dot.is-active{background:var(--teal);transform:scale(1.15)}
 :root[data-theme="dark"] .carousel__btn{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);color:#fff}
+
+.carousel--plans{max-width:420px;margin:0 auto}
+.carousel--plans .carousel__track{min-height:380px}
+.carousel--plans .carousel__slide.plan{
+  position:absolute;inset:0;width:100%}
+.carousel--plans .carousel__slide.plan.is-active{position:relative}
+.carousel--plans .plan:hover{transform:none}
 
 /* ── faq ────────────────────────────────────────────────── */
 .faq{display:grid;gap:.75rem}

@@ -14,41 +14,30 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $  = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
 
-/* ══════════════ reviews carousel ══════════════ */
-(function reviewsCarousel () {
-  const track = $('#reviewTrack');
-  const dotsEl = $('#reviewDots');
-  const prev = $('#revPrev');
-  const next = $('#revNext');
-  if (!track) return;
+/* ══════════════ shared carousel ══════════════ */
+function setupCarousel (root, { autoMs = 6000, dotLabel = 'Slide' } = {}) {
+  if (!root) return;
+  const track = $('.carousel__track', root);
+  const dotsEl = $('.carousel__dots', root);
+  const prev = $('[data-carousel-prev]', root);
+  const next = $('[data-carousel-next]', root);
+  const slides = () => $$('.carousel__slide', track);
+  const count = slides().length;
+  if (!count) return;
 
-  if (SHOW_SAMPLE_NOTICE) {
-    const notice = $('#reviewNotice');
-    if (notice) notice.hidden = false;
+  let index = slides().findIndex(s => s.classList.contains('is-active'));
+  if (index < 0) index = 0;
+
+  if (dotsEl && !dotsEl.children.length) {
+    dotsEl.innerHTML = Array.from({ length: count }, (_, i) =>
+      `<button type="button" class="carousel__dot${i === index ? ' is-active' : ''}" aria-label="${dotLabel} ${i + 1}" data-go="${i}"></button>`
+    ).join('');
   }
 
-  const star = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 17.3-6.2 3.7 1.7-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.5 4.8 1.7 7z"/></svg>';
-  let index = 0;
-
-  track.innerHTML = REVIEWS.map((r, i) => `
-    <article class="glass rev carousel__slide${i === 0 ? ' is-active' : ''}" data-index="${i}">
-      <div class="rev__stars" role="img" aria-label="${r.stars} out of 5 stars">${star.repeat(r.stars)}</div>
-      <p class="rev__text">“${r.text}”</p>
-      <div class="rev__who">
-        <img src="${r.avatar}" alt="" width="44" height="44" loading="lazy">
-        <div><strong>${r.name}</strong><small>${r.place}</small></div>
-      </div>
-    </article>`).join('');
-
-  dotsEl.innerHTML = REVIEWS.map((_, i) =>
-    `<button type="button" class="carousel__dot${i === 0 ? ' is-active' : ''}" aria-label="Review ${i + 1}" data-go="${i}"></button>`
-  ).join('');
-
-  const slides = () => $$('.carousel__slide', track);
   const dots = () => $$('.carousel__dot', dotsEl);
 
   const go = i => {
-    index = (i + REVIEWS.length) % REVIEWS.length;
+    index = (i + count) % count;
     slides().forEach((s, n) => s.classList.toggle('is-active', n === index));
     dots().forEach((d, n) => {
       d.classList.toggle('is-active', n === index);
@@ -63,12 +52,50 @@ const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
     if (btn) go(Number(btn.dataset.go));
   });
 
-  let timer = setInterval(() => go(index + 1), 6000);
-  track.closest('.carousel')?.addEventListener('pointerenter', () => clearInterval(timer));
-  track.closest('.carousel')?.addEventListener('pointerleave', () => {
-    timer = setInterval(() => go(index + 1), 6000);
-  });
+  if (autoMs > 0) {
+    let timer = setInterval(() => go(index + 1), autoMs);
+    root.addEventListener('pointerenter', () => clearInterval(timer));
+    root.addEventListener('pointerleave', () => {
+      timer = setInterval(() => go(index + 1), autoMs);
+    });
+  }
+}
+
+/* ══════════════ reviews carousel ══════════════ */
+(function reviewsCarousel () {
+  const track = $('#reviewTrack');
+  if (!track) return;
+
+  if (SHOW_SAMPLE_NOTICE) {
+    const notice = $('#reviewNotice');
+    if (notice) notice.hidden = false;
+  }
+
+  const star = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 17.3-6.2 3.7 1.7-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.5 4.8 1.7 7z"/></svg>';
+
+  track.innerHTML = REVIEWS.map((r, i) => `
+    <article class="glass rev carousel__slide${i === 0 ? ' is-active' : ''}" data-index="${i}">
+      <div class="rev__stars" role="img" aria-label="${r.stars} out of 5 stars">${star.repeat(r.stars)}</div>
+      <p class="rev__text">“${r.text}”</p>
+      <div class="rev__who">
+        <img src="${r.avatar}" alt="" width="44" height="44" loading="lazy">
+        <div><strong>${r.name}</strong><small>${r.place}</small></div>
+      </div>
+    </article>`).join('');
+
+  setupCarousel($('#reviewCarousel'), { autoMs: 6000, dotLabel: 'Review' });
 })();
+
+/* ══════════════ care plans carousel ══════════════ */
+setupCarousel($('#plansCarousel'), { autoMs: 7000, dotLabel: 'Plan' });
+
+/* ══════════════ service accordions — one open at a time per group ══════════════ */
+$$('.svc-acc').forEach(group => {
+  group.addEventListener('toggle', e => {
+    if (!e.target.open) return;
+    $$('details', group).forEach(d => { if (d !== e.target) d.open = false; });
+  }, true);
+});
 
 /* ══════════════ footer year ══════════════ */
 const yr = $('#yr');

@@ -8,23 +8,30 @@ import {
 } from './vendor/anime.esm.min.js';
 
 import { REVIEWS, SHOW_SAMPLE_NOTICE } from './reviews.js';
-import { PHONE, ENQUIRY_ENDPOINT } from './config.js';
+import { PHONE, PHONE_DISPLAY, ENQUIRY_ENDPOINT } from './config.js';
 
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $  = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
 
-/* ══════════════ reviews ══════════════ */
-(function renderReviews () {
-  const grid = $('#reviewGrid');
-  if (!grid) return;
+/* ══════════════ reviews carousel ══════════════ */
+(function reviewsCarousel () {
+  const track = $('#reviewTrack');
+  const dotsEl = $('#reviewDots');
+  const prev = $('#revPrev');
+  const next = $('#revNext');
+  if (!track) return;
 
-  if (SHOW_SAMPLE_NOTICE) $('#reviewNotice').hidden = false;
+  if (SHOW_SAMPLE_NOTICE) {
+    const notice = $('#reviewNotice');
+    if (notice) notice.hidden = false;
+  }
 
   const star = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 17.3-6.2 3.7 1.7-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.5 4.8 1.7 7z"/></svg>';
+  let index = 0;
 
-  grid.innerHTML = REVIEWS.map(r => `
-    <article class="glass rev" data-anim="card">
+  track.innerHTML = REVIEWS.map((r, i) => `
+    <article class="glass rev carousel__slide${i === 0 ? ' is-active' : ''}" data-index="${i}">
       <div class="rev__stars" role="img" aria-label="${r.stars} out of 5 stars">${star.repeat(r.stars)}</div>
       <p class="rev__text">“${r.text}”</p>
       <div class="rev__who">
@@ -32,17 +39,43 @@ const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
         <div><strong>${r.name}</strong><small>${r.place}</small></div>
       </div>
     </article>`).join('');
+
+  dotsEl.innerHTML = REVIEWS.map((_, i) =>
+    `<button type="button" class="carousel__dot${i === 0 ? ' is-active' : ''}" aria-label="Review ${i + 1}" data-go="${i}"></button>`
+  ).join('');
+
+  const slides = () => $$('.carousel__slide', track);
+  const dots = () => $$('.carousel__dot', dotsEl);
+
+  const go = i => {
+    index = (i + REVIEWS.length) % REVIEWS.length;
+    slides().forEach((s, n) => s.classList.toggle('is-active', n === index));
+    dots().forEach((d, n) => {
+      d.classList.toggle('is-active', n === index);
+      d.setAttribute('aria-current', String(n === index));
+    });
+  };
+
+  prev?.addEventListener('click', () => go(index - 1));
+  next?.addEventListener('click', () => go(index + 1));
+  dotsEl?.addEventListener('click', e => {
+    const btn = e.target.closest('[data-go]');
+    if (btn) go(Number(btn.dataset.go));
+  });
+
+  let timer = setInterval(() => go(index + 1), 6000);
+  track.closest('.carousel')?.addEventListener('pointerenter', () => clearInterval(timer));
+  track.closest('.carousel')?.addEventListener('pointerleave', () => {
+    timer = setInterval(() => go(index + 1), 6000);
+  });
 })();
 
 /* ══════════════ footer year ══════════════ */
 const yr = $('#yr');
 if (yr) yr.textContent = new Date().getFullYear();
 
-/* ══════════════ dropdown menus ══════════════
-   One controller for every .drop — nav groups and the appearance menu.
-   On desktop they float; inside the burger menu the CSS makes them
-   expand in place, so the same markup works on every screen.        */
-const drops = $$('.drop');
+/* ══════════════ dropdown menus (nav groups on desktop only) ══════════════ */
+const drops = $$('.drop:not(.drop--skip-mobile)');
 
 const closeDrops = except => drops.forEach(d => {
   if (d === except) return;
@@ -75,32 +108,28 @@ document.addEventListener('keydown', e => {
   setMenu(false);
 });
 
-/* ══════════════ appearance: calm / warm / dark ══════════════
-   Applied by the inline script in <head> before first paint; this only
-   wires up the menu and remembers the choice.                       */
+/* ══════════════ appearance: calm / warm / dark ══════════════ */
 (function theme () {
   const root = document.documentElement;
   const meta = $('meta[name="theme-color"]');
+  const select = $('#themeSelect');
   const bar = { calm: '#0A6E86', warm: '#0E9C99', dark: '#071A24' };
-  const options = $$('[data-theme-set]');
 
   const paint = mode => {
     root.dataset.theme = mode;
     if (meta) meta.content = bar[mode] || bar.calm;
-    options.forEach(o => o.setAttribute('aria-current', String(o.dataset.themeSet === mode)));
+    if (select && select.value !== mode) select.value = mode;
   };
 
   paint(['calm', 'warm', 'dark'].includes(root.dataset.theme) ? root.dataset.theme : 'calm');
 
-  options.forEach(opt => opt.addEventListener('click', () => {
-    const mode = opt.dataset.themeSet;
-    root.classList.add('theming');                       // brief colour cross-fade
-    paint(mode);
-    try { localStorage.setItem('jai-theme', mode); } catch (e) { /* private mode */ }
+  select?.addEventListener('change', () => {
+    root.classList.add('theming');
+    paint(select.value);
+    try { localStorage.setItem('jai-theme', select.value); } catch (e) { /* private mode */ }
     setTimeout(() => root.classList.remove('theming'), 400);
-  }));
+  });
 
-  /* follow the OS only while the visitor has not chosen for themselves */
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
     let saved = null;
     try { saved = localStorage.getItem('jai-theme'); } catch (err) { /* ignore */ }
@@ -115,7 +144,7 @@ document.addEventListener('keydown', e => {
   const btn = $('#shareBtn');
   if (!btn) return;
 
-  const text = 'JAI Home Care Services — 24×7 medical and personal care at home. +91 99903 02693';
+  const text = `JAI Home Care Services — 24×7 medical and personal care at home. ${PHONE_DISPLAY}`;
 
   btn.addEventListener('click', async () => {
     const url = location.href.split('?')[0];

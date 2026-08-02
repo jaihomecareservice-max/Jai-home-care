@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Illustrated portrait">
+  <defs><clipPath id="c2"><circle cx="100" cy="100" r="100"/></clipPath></defs>
+  <circle cx="100" cy="100" r="100" fill="#FDF0DC"/>
+  <g clip-path="url(#c2)">
+    <!-- blouse -->
+    <path d="M18 200q0-52 42-64l80 0q42 12 42 64z" fill="#9B2C4A"/>
+    <!-- neck -->
+    <path d="M86 108h28v30H86z" fill="#B9793F"/>
+    <!-- hair back -->
+    <path d="M56 96q0-52 44-52t44 52q0 24-6 40H62q-6-16-6-40" fill="#221812"/>
+    <!-- head -->
+    <ellipse cx="100" cy="80" rx="36" ry="42" fill="#D2954F"/>
+    <circle cx="64" cy="84" r="7" fill="#B9793F"/><circle cx="136" cy="84" r="7" fill="#B9793F"/>
+    <!-- hair front + centre parting -->
+    <path d="M63 74q4-34 37-34t37 34q-8-22-37-22T63 74" fill="#221812"/>
+    <path d="M100 40v14" stroke="#3A2A20" stroke-width="2.5"/>
+    <!-- bun -->
+    <circle cx="100" cy="34" r="15" fill="#221812"/>
+    <!-- bindi -->
+    <circle cx="100" cy="62" r="4" fill="#9B2C4A"/>
+    <!-- brows, eyes -->
+    <path d="M82 73q7-4 14 0M104 73q7-4 14 0" stroke="#4A3524" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <circle cx="89" cy="83" r="3.4" fill="#2C1F14"/><circle cx="111" cy="83" r="3.4" fill="#2C1F14"/>
+    <path d="M92 102q8 6 16 0" stroke="#8A5230" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- dupatta draped over shoulder -->
+    <path d="M126 138q34 10 46 62H150q-8-38-32-52z" fill="#E0A93C"/>
+  </g>
+</svg>

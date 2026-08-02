@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 360" role="img"
+     aria-label="Illustration of a caregiver checking an elderly patient's blood pressure at home">
+  <title>Care at home</title>
+  <defs>
+    <clipPath id="room"><rect x="16" y="16" width="388" height="292" rx="26"/></clipPath>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F6FCFB"/><stop offset="100%" stop-color="#E7F5F4"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="16" y="16" width="388" height="292" rx="26" fill="url(#wall)"/>
+
+  <g clip-path="url(#room)">
+    <!-- window -->
+    <rect x="250" y="52" width="112" height="86" rx="10" fill="#CFEBEA"/>
+    <path d="M306 52v86M250 95h112" stroke="#F6FCFB" stroke-width="6"/>
+    <rect x="250" y="52" width="112" height="86" rx="10" fill="none" stroke="#B4DEDC" stroke-width="4"/>
+
+    <!-- floor -->
+    <rect x="0" y="252" width="420" height="60" fill="#DCEFEE"/>
+    <rect x="0" y="252" width="420" height="5" fill="#C2E2E0"/>
+
+    <!-- potted plant -->
+    <path d="M366 252v-30" stroke="#2E9C74" stroke-width="5"/>
+    <path d="M366 232q-22-6-20-26 22 2 20 26M366 238q22-8 21-28-23 4-21 28" fill="#3FB183"/>
+    <path d="M352 252h30l-4 22h-22z" fill="#D98E4A"/>
+
+    <!-- ── chair ── -->
+    <rect x="86" y="130" width="96" height="106" rx="16" fill="#E3C9A4"/>
+    <rect x="94" y="140" width="80" height="88" rx="12" fill="#EFDCC0"/>
+    <rect x="80" y="228" width="108" height="26" rx="10" fill="#D6B78D"/>
+    <path d="M98 254v32M170 254v32" stroke="#C0A075" stroke-width="9" stroke-linecap="round"/>
+
+    <!-- ── seated elderly patient ── -->
+    <!-- legs -->
+    <path d="M118 236h44l6 46h-20l-4-30-4 30h-20z" fill="#7C8FA6"/>
+    <path d="M112 282h34v10h-34zM152 282h34v10h-34z" fill="#4A5A70" rx="4"/>
+    <!-- torso: saree -->
+    <path d="M112 168q28-12 56 0l8 72H104z" fill="#2E9C74"/>
+    <path d="M150 168q18 8 22 72h-14z" fill="#F2B520"/>
+    <!-- arms -->
+    <path d="M112 176q-14 20-10 46" stroke="#C89459" stroke-width="15" fill="none" stroke-linecap="round"/>
+    <path d="M168 176q14 16 12 34" stroke="#C89459" stroke-width="15" fill="none" stroke-linecap="round"/>
+    <!-- BP cuff on upper arm -->
+    <rect x="160" y="182" width="24" height="20" rx="5" fill="#0D4F72" transform="rotate(12 172 192)"/>
+    <!-- neck + head -->
+    <path d="M130 148h20v22h-20z" fill="#B07E4E"/>
+    <ellipse cx="140" cy="128" rx="27" ry="31" fill="#C89459"/>
+    <path d="M113 122q2-30 27-30t27 30q-6-18-27-18t-27 18" fill="#9AA3AA"/>
+    <path d="M113 120q-4 26 4 34-14-14-4-34" fill="#9AA3AA"/>
+    <circle cx="140" cy="113" r="3" fill="#2E9C74"/>
+    <circle cx="131" cy="128" r="2.6" fill="#2C2318"/><circle cx="149" cy="128" r="2.6" fill="#2C2318"/>
+    <path d="M133 140q7 5 14 0" stroke="#84582C" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+
+    <!-- ── standing caregiver ── -->
+    <!-- legs -->
+    <path d="M232 244h46v44h-18v-2h-10v2h-18z" fill="#0A5E63"/>
+    <path d="M228 288h26v10h-26zM256 288h26v10h-26z" fill="#123B4A"/>
+    <!-- scrubs top -->
+    <path d="M226 168q28-14 58 0l10 82h-78z" fill="#0E9C99"/>
+    <path d="M255 154l-14 14 14 16 14-16z" fill="#0A7B79"/>
+    <!-- arms reaching toward patient -->
+    <path d="M226 180q-32 10-42 26" stroke="#0E9C99" stroke-width="17" fill="none" stroke-linecap="round"/>
+    <circle cx="182" cy="208" r="9" fill="#AD733C"/>
+    <path d="M286 180q16 22 8 44" stroke="#0E9C99" stroke-width="17" fill="none" stroke-linecap="round"/>
+    <circle cx="292" cy="228" r="9" fill="#AD733C"/>
+    <!-- stethoscope -->
+    <path d="M240 168q-6 34 14 40t18-30" stroke="#0D4F72" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+    <circle cx="272" cy="176" r="6" fill="#F2B520" stroke="#0D4F72" stroke-width="3"/>
+    <!-- neck + head -->
+    <path d="M245 140h20v20h-20z" fill="#9A6535"/>
+    <ellipse cx="255" cy="120" rx="26" ry="30" fill="#AD733C"/>
+    <path d="M229 114q2-30 26-30t26 30q-6-18-26-18t-26 18" fill="#221812"/>
+    <circle cx="281" cy="104" r="11" fill="#221812"/>
+    <circle cx="247" cy="120" r="2.6" fill="#1B1410"/><circle cx="263" cy="120" r="2.6" fill="#1B1410"/>
+    <path d="M248 132q7 5 14 0" stroke="#6E4522" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <rect x="16" y="16" width="388" height="292" rx="26" fill="none" stroke="#CBE7E5" stroke-width="3"/>
+</svg>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jaihomecareservice-max.github.io/Jai-home-care/sitemap.xml

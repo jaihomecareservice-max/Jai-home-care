@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 216" role="img" aria-label="JAI Home Care Services">
+  <title>JAI Home Care Services</title>
+  <defs>
+    <!-- userSpaceOnUse is required: straight strokes (the I, the A crossbar) have a
+         zero-area bounding box, and an objectBoundingBox gradient makes them vanish. -->
+    <linearGradient id="jaiGold" gradientUnits="userSpaceOnUse" x1="40" y1="0" x2="150" y2="216">
+      <stop offset="0%" stop-color="#FFD867"/>
+      <stop offset="48%" stop-color="#F2B520"/>
+      <stop offset="100%" stop-color="#CE8B05"/>
+    </linearGradient>
+  </defs>
+
+  <g fill="none" stroke="url(#jaiGold)" stroke-linecap="round" stroke-linejoin="round">
+    <!-- roof / home -->
+    <path class="lg-roof" d="M22 108 L150 20 L278 108" stroke-width="20"/>
+
+    <!-- gable window -->
+    <path class="lg-win" d="M133 52 H167 V84 H133 Z" stroke-width="7"/>
+    <path class="lg-win" d="M150 52 V84" stroke-width="7"/>
+    <path class="lg-win" d="M133 68 H167" stroke-width="7"/>
+
+    <!-- J -->
+    <path class="lg-j" d="M92 128 V168 C92 192 62 194 54 174" stroke-width="24"/>
+
+    <!-- A -->
+    <path class="lg-a" d="M126 196 L150 126 L174 196" stroke-width="24"/>
+    <path class="lg-a" d="M132 172 H168" stroke-width="20"/>
+
+    <!-- I  (serifs top and bottom so it reads as a letter, not a wall) -->
+    <path class="lg-i" d="M226 128 V196" stroke-width="24"/>
+    <path class="lg-i" d="M204 128 H248" stroke-width="18"/>
+    <path class="lg-i" d="M204 196 H248" stroke-width="18"/>
+  </g>
+</svg>

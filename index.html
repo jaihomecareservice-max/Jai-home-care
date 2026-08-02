@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JAI Home Care Services — 24×7 Medical Assistance at Home</title>
+<meta name="description" content="JAI Home Care Services provides 24×7 professional medical and personal care at home — physiotherapy, post-surgery recovery, wound dressing, vitals monitoring, medication management and daily living support. Call +91 99903 02693.">
+<meta name="theme-color" content="#0E9C99">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+
+<meta property="og:title" content="JAI Home Care Services — 24×7 Medical Assistance at Home">
+<meta property="og:description" content="Professional medical and personal care delivered at home, with comfort, dignity and trust.">
+<meta property="og:type" content="website">
+
+<link rel="preload" href="assets/fonts/outfit-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/styles.css">
+
+<!-- Structured data: helps Google show the business in local "home nursing near me"
+     searches and in Maps. Everything here must stay factually true.
+     TODO once registered: add "address", "areaServed" and the licence number. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "JAI Home Care Services",
+  "description": "Professional medical and personal care delivered at home — physiotherapy, post-surgery recovery, wound care, vitals monitoring, medication management and daily living support.",
+  "telephone": "+91-99903-02693",
+  "email": "jaihomecareservice@gmail.com",
+  "url": "https://linktr.ee/jaihomecareservice",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "availableService": [
+    { "@type": "MedicalTherapy", "name": "Physiotherapy & Mobility Support" },
+    { "@type": "MedicalTherapy", "name": "Post-Surgery Recovery Care" },
+    { "@type": "MedicalTherapy", "name": "Wound Care & Dressing" },
+    { "@type": "MedicalTest",    "name": "Medical Vitals Monitoring" },
+    { "@type": "MedicalTherapy", "name": "Medication Management" },
+    { "@type": "MedicalTherapy", "name": "Personal Assistance & Daily Support" }
+  ]
+}
+</script>
+<script>
+/* Runs before first paint so the saved theme never flashes the wrong colours. */
+(function(){
+  var r = document.documentElement;
+  r.className += ' js';
+  var t;
+  try { t = localStorage.getItem('jai-theme'); } catch (e) {}
+  if (['calm', 'warm', 'dark'].indexOf(t) === -1) {
+    // Calm is the default: a clear, clinical look reads as more trustworthy
+    // for medical care than a decorative one.
+    t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'calm';
+  }
+  r.dataset.theme = t;
+})();
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- soft colour field that the frosted-glass panels sit on top of -->
+<div class="orbs" aria-hidden="true">
+  <span class="orb orb--1"></span><span class="orb orb--2"></span>
+  <span class="orb orb--3"></span><span class="orb orb--4"></span>
+</div>
+
+<div class="topbar">
+  <div class="wrap topbar__inner">
+    <p class="topbar__live"><span class="dot" aria-hidden="true"></span> <strong>24×7</strong> medical assistance at home</p>
+    <p class="topbar__ph">
+      <a href="tel:+919990302693">+91 99903 02693</a>
+      <span class="topbar__sep" aria-hidden="true">·</span>
+      <a class="topbar__mail" href="mailto:jaihomecareservice@gmail.com">jaihomecareservice@gmail.com</a>
+    </p>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="brand" href="#top" aria-label="JAI Home Care Services — home">
+      <img src="assets/logo.svg" alt="" width="46" height="46">
+      <span class="brand__txt"><strong>JAI</strong><small>Home Care Services</small></span>
+    </a>
+
+    <nav class="nav__links" id="menu" aria-label="Main">
+      <div class="drop">
+        <button class="drop__btn" type="button" aria-expanded="false" aria-controls="drop-care">
+          Our care
+          <svg class="drop__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <div class="drop__menu" id="drop-care">
+          <a href="#services"><strong>All services</strong><small>Nine clinical &amp; personal care services, in full</small></a>
+          <a href="#plans"><strong>Care plans</strong><small>Single visit, 12-hour shift or 24-hour live-in</small></a>
+          <a href="#pricing"><strong>Pricing</strong><small>What decides the cost, and what to ask us</small></a>
+          <a href="#when"><strong>When you need care</strong><small>Situations where home care usually helps</small></a>
+        </div>
+      </div>
+
+      <div class="drop">
+        <button class="drop__btn" type="button" aria-expanded="false" aria-controls="drop-trust">
+          Why trust us
+          <svg class="drop__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <div class="drop__menu" id="drop-trust">
+          <a href="#charter"><strong>Our care charter</strong><small>The commitments you can hold us to</small></a>
+          <a href="#updates"><strong>Family updates</strong><small>How you stay informed from another city</small></a>
+          <a href="#insurance"><strong>Insurance paperwork</strong><small>Records kept so a claim is possible</small></a>
+          <a href="#process"><strong>How it works</strong><small>From first call to care starting</small></a>
+          <a href="#reviews"><strong>Reviews</strong><small>What families say</small></a>
+        </div>
+      </div>
+
+      <a href="#faq">FAQ</a>
+      <a href="#careers">Work with us</a>
+      <a href="#book">Book care</a>
+      <span class="nav__badge nav__badge--m">24×7 Available</span>
+    </nav>
+
+    <div class="nav__act">
+      <span class="nav__badge"><span class="dot" aria-hidden="true"></span> 24×7</span>
+
+      <button class="iconbtn" id="shareBtn" type="button" aria-label="Share this page with family">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16a3 3 0 0 0-2.2 1l-6-3.5a3 3 0 0 0 0-1l6-3.5a3 3 0 1 0-1-2.2 3 3 0 0 0 .1.7L9 11a3 3 0 1 0 0 4.2l5.9 3.5a3 3 0 0 0-.1.6A3 3 0 1 0 18 16"/></svg>
+      </button>
+
+      <div class="drop drop--theme">
+        <button class="iconbtn" id="themeBtn" type="button" aria-expanded="false" aria-controls="drop-theme" aria-label="Change appearance">
+          <svg class="ico-calm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9"/></svg>
+          <svg class="ico-warm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 1 5-5 5 5 0 0 1-5 5m0-13a1 1 0 0 1 1 1v1.5a1 1 0 0 1-2 0V5a1 1 0 0 1 1-1m0 14a1 1 0 0 1 1 1v1.5a1 1 0 0 1-2 0V19a1 1 0 0 1 1-1M4 12a1 1 0 0 1 1-1h1.5a1 1 0 0 1 0 2H5a1 1 0 0 1-1-1m13.5 0a1 1 0 0 1 1-1H20a1 1 0 0 1 0 2h-1.5a1 1 0 0 1-1-1M6.3 6.3a1 1 0 0 1 1.4 0l1 1a1 1 0 0 1-1.4 1.4l-1-1a1 1 0 0 1 0-1.4m9 9a1 1 0 0 1 1.4 0l1 1a1 1 0 0 1-1.4 1.4l-1-1a1 1 0 0 1 0-1.4m2.4-9a1 1 0 0 1 0 1.4l-1 1a1 1 0 1 1-1.4-1.4l1-1a1 1 0 0 1 1.4 0m-9 9a1 1 0 0 1 0 1.4l-1 1a1 1 0 0 1-1.4-1.4l1-1a1 1 0 0 1 1.4 0"/></svg>
+          <svg class="ico-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8"/></svg>
+        </button>
+        <div class="drop__menu drop__menu--end" id="drop-theme" role="group" aria-label="Appearance">
+          <button type="button" data-theme-set="calm"><strong>Calm</strong><small>Clear and clinical — recommended</small></button>
+          <button type="button" data-theme-set="warm"><strong>Warm</strong><small>Softer, with more colour</small></button>
+          <button type="button" data-theme-set="dark"><strong>Dark</strong><small>Easier at night</small></button>
+        </div>
+      </div>
+
+      <a class="btn btn--gold btn--sm" href="tel:+919990302693">
+        <svg viewBox="0 0 24 24" class="i" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.25 1z"/></svg>
+        Call now
+      </a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow" data-anim="hero">Medical assistance at home</p>
+      <h1 data-anim="hero-title">Home is the best place to <em>heal</em>.</h1>
+      <p class="lede" data-anim="hero">Professional medical and personal care, delivered at your doorstep —
+        with comfort, dignity and trust. Available <strong>24 hours a day, 7 days a week</strong>.</p>
+
+      <div class="cta" data-anim="hero">
+        <a class="btn btn--gold btn--lg" href="tel:+919990302693">
+          <svg viewBox="0 0 24 24" class="i" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.25 1z"/></svg>
+          +91 99903 02693
+        </a>
+        <a class="btn btn--glass btn--lg" href="#book">Book care at home</a>
+      </div>
+
+      <ul class="chips" data-anim="hero">
+        <li>24×7 availability</li>
+        <li>All medical equipment available</li>
+        <li>Care at your own home</li>
+      </ul>
+    </div>
+
+    <div class="hero__art">
+      <div class="glass hero__scene" data-anim="hero-art">
+        <!-- inline (not <img>) so anime.js can draw the strokes on -->
+        <svg id="heroLogoSvg" class="hero__scene-logo" viewBox="0 0 300 216" role="img" aria-label="JAI Home Care Services">
+          <defs>
+            <!-- userSpaceOnUse: straight strokes have a zero-area bbox and would
+                 not render at all with the default objectBoundingBox units. -->
+            <linearGradient id="heroGold" gradientUnits="userSpaceOnUse" x1="40" y1="0" x2="150" y2="216">
+              <stop offset="0%" stop-color="#FFD867"/><stop offset="48%" stop-color="#F2B520"/>
+              <stop offset="100%" stop-color="#CE8B05"/>
+            </linearGradient>
+          </defs>
+          <g fill="none" stroke="url(#heroGold)" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 108 L150 20 L278 108" stroke-width="20"/>
+            <path d="M133 52 H167 V84 H133 Z" stroke-width="7"/>
+            <path d="M150 52 V84" stroke-width="7"/>
+            <path d="M133 68 H167" stroke-width="7"/>
+            <path d="M92 128 V168 C92 192 62 194 54 174" stroke-width="24"/>
+            <path d="M126 196 L150 126 L174 196" stroke-width="24"/>
+            <path d="M132 172 H168" stroke-width="20"/>
+            <path d="M226 128 V196" stroke-width="24"/>
+            <path d="M204 128 H248" stroke-width="18"/>
+            <path d="M204 196 H248" stroke-width="18"/>
+          </g>
+        </svg>
+        <img src="assets/img/care-scene.svg" alt="A caregiver checking an elderly patient's blood pressure at home" width="420" height="360">
+        <p class="hero__scene-tag">Your Health, Our Priority!</p>
+      </div>
+      <div class="glass float float--a" data-anim="float">
+        <span class="float__ico float__ico--teal" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.7-9.3-9A5.4 5.4 0 0 1 12 6.7 5.4 5.4 0 0 1 21.3 12c-1.8 4.3-9.3 9-9.3 9z"/></svg></span>
+        <div><strong>Comfort &amp; dignity</strong><small>Care on familiar ground</small></div>
+      </div>
+      <div class="glass float float--b" data-anim="float">
+        <span class="float__ico float__ico--gold" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2 4.5 12.5H11l-1 9.5 8.5-10.5H12z"/></svg></span>
+        <div><strong>24×7 response</strong><small>Day, night and Sundays</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ TRUST STRIP ══════════════ -->
+<section class="sec sec--tight">
+  <div class="wrap">
+    <ul class="stats">
+      <li class="glass stat" data-anim="stat"><strong data-count="24" data-suffix="×7">24×7</strong><span>Availability, including nights &amp; holidays</span></li>
+      <li class="glass stat" data-anim="stat"><strong data-count="9" data-suffix="">9</strong><span>Clinical &amp; personal care services</span></li>
+      <li class="glass stat" data-anim="stat"><strong data-count="100" data-suffix="%">100%</strong><span>Care delivered in your own home</span></li>
+      <li class="glass stat" data-anim="stat"><strong class="stat--word">All</strong><span>Medical equipment arranged for you</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════ WHEN DO YOU NEED CARE ══════════════ -->
+<section class="sec" id="when">
+  <div class="wrap">
+    <header class="sec__head" data-anim="head">
+      <p class="eyebrow eyebrow--teal">Not sure where to start?</p>
+      <h2>When families usually call us</h2>
+      <p class="sec__sub">If any of these sounds like your situation, home care is likely to help.
+        Call us and we'll tell you honestly whether it is — and what it would involve.</p>
+    </header>
+
+    <div class="grid grid--3">
+      <article class="glass sit" data-anim="card">
+        <h4>Someone is being discharged after surgery</h4>
+        <p>Dressings need changing, movement is limited, and the hospital has sent a list of
+          instructions nobody at home feels confident following.</p>
+      </article>
+      <article class="glass sit" data-anim="card">
+        <h4>An elderly parent can't manage alone anymore</h4>
+        <p>Bathing, toilet, meals and walking have all become difficult, and the family cannot be
+          present through the whole day.</p>
+      </article>
+      <article class="glass sit" data-anim="card">
+        <h4>There has been a fall, or a fall is likely</h4>
+        <p>Someone needs a steady hand for every transfer between bed, chair and bathroom before an
+          accident sets recovery back by months.</p>
+      </article>
+      <article class="glass sit" data-anim="card">
+        <h4>A long-term condition needs daily tracking</h4>
+        <p>BP, sugar and oxygen readings need to be taken properly and written down, so the treating
+          doctor sees a trend instead of one-off numbers.</p>
+      </article>
+      <article class="glass sit" data-anim="card">
+        <h4>The medicine list has become too long</h4>
+        <p>Several tablets at different times of day, and nobody is certain any more what was taken
+          and what was missed.</p>
+      </article>
+      <article class="glass sit" data-anim="card">
+        <h4>The family carer is exhausted</h4>
+        <p>One relative has been doing everything for weeks. Regular help keeps them from burning out
+          — and keeps the patient safer too.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SERVICES ══════════════ -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <header class="sec__head" data-anim="head">
+      <p class="eyebrow eyebrow--teal">What we do</p>
+      <h2>Every service, explained in full</h2>
+      <p class="sec__sub">Nine services across two areas of care. Each one below lists exactly what is
+        included, so you know what you are getting before you call.</p>
+    </header>
+
+    <div class="svc-block">
+      <h3 class="svc-block__title" data-anim="head">
+        <span class="pill pill--teal" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3h6v3h4a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4zm2 2v1h2V5zm0 7v2H9v2h2v2h2v-2h2v-2h-2v-2z"/></svg></span>
+        Medical &amp; Clinical Care
+      </h3>
+
+      <div class="grid">
+        <article class="glass card" data-anim="card">
+          <h4>Physiotherapy &amp; Mobility Support</h4>
+          <p>Guided exercise and movement therapy carried out at home, to improve movement, reduce pain
+            and support recovery — so progress continues between hospital visits.</p>
+          <ul class="inc">
+            <li>Assisted exercise sessions</li>
+            <li>Joint and muscle mobility work</li>
+            <li>Walking and balance practice</li>
+            <li>Guidance for the family on safe movement</li>
+          </ul>
+        </article>
+
+        <article class="glass card" data-anim="card">
+          <h4>Post-Surgery Recovery Care</h4>
+          <p>Structured support through the weeks after an operation — dressing, exercise guidance and
+            healing supervision, so recovery happens at home rather than in a hospital bed.</p>
+          <ul class="inc">
+            <li>Surgical site dressing</li>
+            <li>Prescribed exercise guidance</li>
+            <li>Healing supervision and progress checks</li>
+            <li>Vitals tracked through recovery</li>
+          </ul>
+        </article>
+
+        <article class="glass card" data-anim="card">
+          <h4>Wound Care &amp; Dressing</h4>
+          <p>Safe, hygienic dressing with follow-up monitoring — for surgical wounds, bed sores,
+            diabetic wounds and injuries that need regular attention.</p>
+          <ul class="inc">
+            <li>Sterile cleaning and dressing changes</li>
+            <li>Monitoring for signs of infection</li>
+            <li>Scheduled follow-up visits</li>
+            <li>Written record of healing progress</li>
+          </ul>
+        </article>
+
+        <article class="glass card" data-anim="card">
+          <h4>Medical Vitals Monitoring</h4>
+          <p>Routine checks of the numbers that matter, recorded properly — so you and the treating
+            doctor can see the trend, not just a one-off reading.</p>
+          <ul class="inc">
+            <li>Blood pressure (BP)</li>
+            <li>Blood sugar levels</li>
+            <li>Pulse rate</li>
+            <li>Oxygen saturation (SpO₂)</li>
+            <li>Health records maintained for every visit</li>
+          </ul>
+        </article>
+
+        <article class="glass card" data-anim="card">
+          <h4>Medication Management</h4>
+          <p>Ensuring medicines are taken correctly and on time — the single most common reason home
+            recovery goes off track, especially when the list of tablets is long.</p>
+          <ul class="inc">
+            <li>Dose scheduling and reminders</li>
+            <li>Supervision that the correct dose is taken</li>
+            <li>Refill tracking so medicines never run out</li>
+            <li>Record of what was given and when</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+
+    <div class="svc-block">
+      <h3 class="svc-block__title" data-anim="head">
+        <span class="pill pill--gold" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 11a4 4 0 1 0-4-4 4 4 0 0 0 4 4m-8 1a3 3 0 1 0-3-3 3 3 0 0 0 3 3m0 2c-2.3 0-6 1.2-6 3.5V20h7v-2.5A4.6 4.6 0 0 1 10.6 14 11 11 0 0 0 8 14m8 .5c-2.7 0-8 1.4-8 4V20h16v-1.5c0-2.6-5.3-4-8-4"/></svg></span>
+        Personal Assistance &amp; Daily Support
+      </h3>
+
+      <div class="grid">
+        <article class="glass card" data-anim="card">
+          <h4>Bathing &amp; Personal Hygiene</h4>
+          <p>Gentle, respectful help with the daily bathing routine — including bed baths when a person
+            cannot get to the bathroom.</p>
+          <ul class="inc">
+            <li>Assisted bath or full bed bath</li>
+            <li>Oral, nail and hair hygiene</li>
+            <li>Fresh change of clothes</li>
+            <li>Skin care and pressure-point checks</li>
+          </ul>
+        </article>
+
+        <article class="glass card" data-anim="card">
+          <h4>Toileting &amp; Grooming Support</h4>
+          <p>Discreet assistance with the parts of the day people find hardest to ask for help with —
+            handled so the person keeps feeling like themselves.</p>
+          <ul class="inc">
+            <li>Toilet and commode assistance</li>
+            <li>Incontinence care and changes</li>
+            <li>Combing, shaving and grooming</li>
+            <li>Help with dressing</li>
+          </ul>
+        </article>
+
+        <article class="glass card" data-anim="card">
+          <h4>Feeding &amp; Meal Support</h4>
+          <p>Patient help at mealtimes, at the pace the person needs — important when weakness or
+            illness makes eating slow and tiring.</p>
+          <ul class="inc">
+            <li>Assisted feeding</li>
+            <li>Support with soft and liquid diets</li>
+            <li>Hydration reminders through the day</li>
+            <li>Watching for difficulty in swallowing</li>
+          </ul>
+        </article>
+
+        <article class="glass card" data-anim="card">
+          <h4>Mobility &amp; Walking Assistance</h4>
+          <p>Steady support for moving safely around the home — the difference between a confident day
+            and a fall that sets recovery back by months.</p>
+          <ul class="inc">
+            <li>Bed-to-chair and chair-to-toilet transfers</li>
+            <li>Supported walking indoors</li>
+            <li>Regular position changes to prevent bed sores</li>
+            <li>Spotting fall risks around the house</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ CARE PLANS ══════════════ -->
+<section class="sec" id="plans">
+  <div class="wrap">
+    <header class="sec__head" data-anim="head">
+      <p class="eyebrow eyebrow--teal">Care plans</p>
+      <h2>Book by the visit, the shift, or round the clock</h2>
+      <p class="sec__sub">Care is arranged for as many hours a day and as many days as you actually
+        need — from one dressing change to continuous live-in support. Nothing is locked into a
+        long contract.</p>
+    </header>
+
+    <div class="grid grid--3">
+      <article class="glass plan" data-anim="card">
+        <h4>Single visit</h4>
+        <p class="plan__dur">1–2 hours</p>
+        <!-- TODO owner: replace with your real rate, e.g. "₹700 per visit onwards" -->
+        <p class="plan__rate">Rates on call</p>
+        <ul class="inc">
+          <li>Wound dressing or injection</li>
+          <li>One physiotherapy session</li>
+          <li>Vitals check and record</li>
+          <li>Good for steady recovery at home</li>
+        </ul>
+        <a class="btn btn--glass btn--full" href="#book">Book a visit</a>
+      </article>
+
+      <article class="glass plan plan--pick" data-anim="card">
+        <span class="plan__tag">Most asked for</span>
+        <h4>12-hour care</h4>
+        <p class="plan__dur">Day shift or night shift</p>
+        <!-- TODO owner: replace with your real monthly rate -->
+        <p class="plan__rate">Rates on call</p>
+        <ul class="inc">
+          <li>Daily bathing, feeding and toileting help</li>
+          <li>Medicines given on schedule</li>
+          <li>Vitals monitored and recorded</li>
+          <li>Mobility and walking support</li>
+        </ul>
+        <a class="btn btn--gold btn--full" href="#book">Book 12-hour care</a>
+      </article>
+
+      <article class="glass plan" data-anim="card">
+        <h4>24-hour live-in</h4>
+        <p class="plan__dur">Round the clock</p>
+        <!-- TODO owner: replace with your real monthly rate -->
+        <p class="plan__rate">Rates on call</p>
+        <ul class="inc">
+          <li>Someone present through the night</li>
+          <li>Position changes to prevent bed sores</li>
+          <li>Immediate help if the patient falls</li>
+          <li>For bed-bound and post-ICU recovery</li>
+        </ul>
+        <a class="btn btn--glass btn--full" href="#book">Book live-in care</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ PRICING TRANSPARENCY ══════════════ -->
+<section class="sec sec--tight" id="pricing">
+  <div class="wrap">
+    <div class="glass money" data-anim="head">
+      <div class="money__lead">
+        <p class="eyebrow eyebrow--teal">Clear pricing</p>
+        <h2>What you pay depends on three things</h2>
+        <p>Which service you need, how many hours a day, and for how many days. That's it. Call us
+          with those three answers and you'll get the full amount before anything is booked.</p>
+        <a class="btn btn--gold btn--lg" href="tel:+919990302693">Get a quote on call</a>
+      </div>
+
+      <div class="money__ask">
+        <h3>Ask us all of this before you decide</h3>
+        <p class="money__note">Any home-care provider should answer these without hesitation. Ours
+          are answered on the first call — please do ask.</p>
+        <ul class="inc">
+          <li>The total monthly amount, not just a daily rate</li>
+          <li>Whether any advance or deposit applies</li>
+          <li>What medical equipment costs to rent, per item</li>
+          <li>What happens if the assigned caregiver is unavailable</li>
+          <li>Whether rates change on Sundays or festivals</li>
+          <li>How much notice is needed to stop or change the care</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ EQUIPMENT ══════════════ -->
+<section class="sec sec--tight">
+  <div class="wrap">
+    <div class="glass equip" data-anim="head">
+      <div>
+        <h2>All medical equipment available</h2>
+        <p>Whatever the care plan needs — hospital bed, oxygen support, wheelchair, walker, air
+          mattress, monitoring devices — we arrange it, so nobody in the family has to run around
+          sourcing and setting up equipment. Tell us the requirement and we'll confirm availability.</p>
+      </div>
+      <a class="btn btn--gold btn--lg" href="tel:+919990302693">Ask about equipment</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ WHY US ══════════════ -->
+<section class="sec" id="why">
+  <div class="wrap">
+    <header class="sec__head" data-anim="head">
+      <p class="eyebrow eyebrow--teal">Why families choose us</p>
+      <h2>Your Health, Our Priority</h2>
+      <p class="sec__sub">Three commitments behind every visit we make.</p>
+    </header>
+
+    <div class="grid grid--3">
+      <article class="glass card card--val" data-anim="card">
+        <span class="val__no">01</span>
+        <h4>Comfort</h4>
+        <p>Recovery is easier in your own bed, your own room, surrounded by your own people. We bring
+          the care into that room instead of moving the patient out of it — no ambulance trips, no
+          waiting rooms, no hospital food.</p>
+      </article>
+      <article class="glass card card--val" data-anim="card">
+        <span class="val__no">02</span>
+        <h4>Dignity</h4>
+        <p>Personal care is personal. Bathing, toileting and grooming are handled quietly and
+          respectfully, at the person's own pace — because how care is given matters as much as
+          whether it is given.</p>
+      </article>
+      <article class="glass card card--val" data-anim="card">
+        <span class="val__no">03</span>
+        <h4>Trust</h4>
+        <p>Vitals recorded, medicines tracked, dressings monitored, notes kept for every visit — so the
+          family always knows exactly where the recovery stands, and so does the treating doctor.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FAMILY UPDATES ══════════════ -->
+<section class="sec" id="updates">
+  <div class="wrap">
+    <div class="split">
+      <div class="split__copy" data-anim="head">
+        <p class="eyebrow eyebrow--teal">Staying informed</p>
+        <h2>You'll know how they are, even from another city</h2>
+        <p class="sec__sub">The hardest part of arranging care for a parent is not being in the room.
+          If you live in another city — or another country — you are trusting someone you cannot see.
+          So we write things down and we tell you, rather than waiting to be asked.</p>
+        <a class="btn btn--gold" href="#book">Arrange care</a>
+      </div>
+
+      <ul class="ticks glass" data-anim="card">
+        <li>
+          <strong>A daily message on WhatsApp</strong>
+          What was done that day — medicines given, meals taken, how the patient seemed.
+        </li>
+        <li>
+          <strong>Vitals written down every visit</strong>
+          BP, sugar, pulse and oxygen kept as a record, so your doctor sees the trend rather than
+          one reading.
+        </li>
+        <li>
+          <strong>One number that reaches a person</strong>
+          Not a call centre. If something changes, you hear it from us the same day — 24×7.
+        </li>
+        <li>
+          <strong>Records you can forward</strong>
+          Everything is kept in a form you can pass straight to the treating doctor or an insurer.
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ INSURANCE PAPERWORK ══════════════ -->
+<section class="sec sec--tight" id="insurance">
+  <div class="wrap">
+    <div class="glass money" data-anim="head">
+      <div class="money__lead">
+        <p class="eyebrow eyebrow--teal">Insurance paperwork</p>
+        <h2>Home care can sometimes be claimed. Most families never try.</h2>
+        <p>Many Indian health policies include a <strong>domiciliary hospitalisation</strong> clause
+          that can cover treatment taken at home when a hospital bed was not available or the patient
+          could not be moved. It usually needs a doctor's prescription, sometimes pre-authorisation,
+          and always complete documentation — which is exactly where most claims fall apart.</p>
+        <p class="money__note">We are not insurance agents and cannot promise any claim will be
+          approved. What we can do is make sure the paperwork exists.</p>
+      </div>
+
+      <div class="money__ask">
+        <h3>What we keep for you</h3>
+        <ul class="inc">
+          <li>Dated records of every visit and what was done</li>
+          <li>Vitals logs signed by the attending staff</li>
+          <li>Proper invoices with service details, not just a total</li>
+          <li>A written summary of the care period if you need one</li>
+        </ul>
+        <h3 class="mt">Worth asking your insurer</h3>
+        <ul class="inc">
+          <li>Does the policy have a domiciliary clause, and what does it cover?</li>
+          <li>Is pre-authorisation needed before care starts?</li>
+          <li>Which documents must the provider supply?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ CARE CHARTER ══════════════ -->
+<section class="sec" id="charter">
+  <div class="wrap">
+    <header class="sec__head" data-anim="head">
+      <p class="eyebrow eyebrow--teal">Our care charter</p>
+      <h2>What you can hold us to</h2>
+      <p class="sec__sub">Hospitals publish a patient charter. Home-care providers rarely do — even
+        though we are the ones coming into your house. These are the commitments every person
+        working on our behalf is expected to keep.</p>
+    </header>
+
+    <div class="grid grid--3">
+      <article class="glass card" data-anim="card">
+        <h4>Consent before anything is done</h4>
+        <p>Nothing is carried out without explaining it first — to the patient wherever possible, and
+          to the family otherwise. Personal care is never rushed or forced.</p>
+      </article>
+      <article class="glass card" data-anim="card">
+        <h4>Privacy stays inside your home</h4>
+        <p>Medical details, family matters and anything seen in the house are not discussed
+          elsewhere. No photographs of the patient without your permission.</p>
+      </article>
+      <article class="glass card" data-anim="card">
+        <h4>Only the person we sent</h4>
+        <p>Nobody unannounced turns up in our name. If a replacement is needed you are told who is
+          coming and why, before they arrive.</p>
+      </article>
+      <article class="glass card" data-anim="card">
+        <h4>We stay inside our limits</h4>
+        <p>We deliver care and keep records. We do not change prescriptions or override the treating
+          doctor — and we will say plainly when something needs a doctor.</p>
+      </article>
+      <article class="glass card" data-anim="card">
+        <h4>Hands, equipment and linen kept clean</h4>
+        <p>Hand hygiene before and after every procedure, sterile material for every dressing, and
+          equipment cleaned between uses.</p>
+      </article>
+      <article class="glass card" data-anim="card">
+        <h4>Tell us when we fall short</h4>
+        <p>If the care is not right, call the number on this page and speak to us directly. Serious
+          concerns are answered the same day.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ PROCESS ══════════════ -->
+<section class="sec" id="process">
+  <div class="wrap">
+    <header class="sec__head" data-anim="head">
+      <p class="eyebrow eyebrow--teal">How it works</p>
+      <h2>Getting care started is simple</h2>
+    </header>
+
+    <ol class="steps">
+      <li class="glass step" data-anim="card">
+        <span class="step__no">1</span>
+        <h4>Call or WhatsApp us</h4>
+        <p>Tell us about the patient, the condition and the kind of support you're looking for. Any
+          hour — the line is open 24×7.</p>
+      </li>
+      <li class="glass step" data-anim="card">
+        <span class="step__no">2</span>
+        <h4>We plan the care</h4>
+        <p>We match the right support to the condition, agree how many days and how many hours a day
+          are needed, and arrange any medical equipment required.</p>
+      </li>
+      <li class="glass step" data-anim="card">
+        <span class="step__no">3</span>
+        <h4>Care begins at home</h4>
+        <p>Our staff arrive at your home and care starts, with vitals monitored and written records
+          kept from the very first visit.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ══════════════ REVIEWS ══════════════ -->
+<section class="sec" id="reviews">
+  <div class="wrap">
+    <header class="sec__head" data-anim="head">
+      <p class="eyebrow eyebrow--teal">Reviews</p>
+      <h2>What families say</h2>
+    </header>
+
+    <!-- The notice below is switched on/off from assets/reviews.js -->
+    <div class="notice" id="reviewNotice" hidden>
+      <strong>Placeholder content — not real reviews.</strong>
+      Replace the entries in <code>assets/reviews.js</code> with genuine client words, then set
+      <code>SHOW_SAMPLE_NOTICE = false</code> to remove this box.
+    </div>
+
+    <div class="grid grid--rev" id="reviewGrid"></div>
+  </div>
+</section>
+
+<!-- ══════════════ FAQ ══════════════ -->
+<section class="sec" id="faq">
+  <div class="wrap wrap--narrow">
+    <header class="sec__head" data-anim="head">
+      <p class="eyebrow eyebrow--teal">Questions</p>
+      <h2>Good to know</h2>
+    </header>
+
+    <div class="faq">
+      <details class="glass" data-anim="card">
+        <summary>Are you really available 24×7?</summary>
+        <p>Yes — the phone line is open 24 hours a day, 7 days a week, including nights, Sundays and
+          public holidays. Call +91 99903 02693 whenever the need arises.</p>
+      </details>
+      <details class="glass" data-anim="card">
+        <summary>For how many days can I book care?</summary>
+        <p>From a single visit to daily care over weeks or months. Use the booking form below to tell
+          us how many days you need and how many hours a day, and we'll confirm what's possible.</p>
+      </details>
+      <details class="glass" data-anim="card">
+        <summary>Do you provide medical equipment as well?</summary>
+        <p>Yes — all medical equipment is available. Tell us what the care plan requires and we'll
+          confirm availability and arrange it along with the care.</p>
+      </details>
+      <details class="glass" data-anim="card">
+        <summary>Can you look after a patient recovering from surgery?</summary>
+        <p>Yes. Post-surgery recovery care is one of our core services and covers dressing, exercise
+          guidance and healing supervision, plus vitals monitoring through the recovery period.</p>
+      </details>
+      <details class="glass" data-anim="card">
+        <summary>What does it cost?</summary>
+        <p>Charges depend on the services required, how many hours a day and for how many days. Give us
+          a call and we'll walk you through the options for your situation before anything is booked.</p>
+      </details>
+      <details class="glass" data-anim="card">
+        <summary>What if the assigned caregiver is unavailable one day?</summary>
+        <p>Tell us as early as you can and we will arrange a replacement. Ask us on the first call
+          how quickly we can substitute someone — it is the question families most often forget,
+          and it matters most on the day it happens.</p>
+      </details>
+      <details class="glass" data-anim="card">
+        <summary>Is there a deposit, or a minimum booking period?</summary>
+        <p>Ask us directly on the call and we'll tell you before you commit to anything. You will
+          always be given the complete amount up front rather than a daily rate that grows later.</p>
+      </details>
+      <details class="glass" data-anim="card">
+        <summary>Does medical equipment cost extra?</summary>
+        <p>Equipment such as a hospital bed, air mattress, oxygen support or wheelchair is charged
+          separately from the care itself. Tell us what is needed and we'll quote care and equipment
+          together, so there is one clear figure.</p>
+      </details>
+      <details class="glass" data-anim="card">
+        <summary>Do you take over from the treating doctor?</summary>
+        <p>No. We carry out care at home and keep records of vitals, medicines and healing progress
+          so your own doctor can see how recovery is going. Treatment decisions stay with the doctor
+          and the hospital.</p>
+      </details>
+      <details class="glass" data-anim="card">
+        <summary>What happens in an emergency?</summary>
+        <p>Our staff will contact you and your listed emergency number immediately. Please tell us at
+          the time of booking which hospital the patient should be taken to, so nobody has to decide
+          that in a hurry.</p>
+      </details>
+      <details class="glass" data-anim="card">
+        <summary>Which areas do you serve?</summary>
+        <p>Call us on +91 99903 02693 to confirm that we cover your locality.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ WORK WITH US ══════════════ -->
+<section class="sec" id="careers">
+  <div class="wrap">
+    <div class="split split--rev">
+      <div class="split__copy" data-anim="head">
+        <p class="eyebrow eyebrow--teal">Work with us</p>
+        <h2>Are you a nurse, attendant or physiotherapist?</h2>
+        <p class="sec__sub">We are always looking for people who are good at this work and decent to
+          the families they look after. If that is you, we would like to hear from you — whether you
+          want full-time work, night shifts only, or occasional visits near where you live.</p>
+        <ul class="ticks ticks--plain">
+          <li><strong>GNM, ANM and B.Sc. nurses</strong></li>
+          <li><strong>Trained patient attendants and caregivers</strong></li>
+          <li><strong>Physiotherapists</strong></li>
+        </ul>
+        <div class="cta">
+          <a class="btn btn--gold" href="https://wa.me/919990302693?text=Hello%20JAI%20Home%20Care%20Services%2C%20I%20would%20like%20to%20apply%20for%20work.%0A%0AName%3A%0ARole%20(nurse%20%2F%20attendant%20%2F%20physiotherapist)%3A%0AQualification%3A%0AExperience%3A%0AArea%20you%20live%20in%3A" target="_blank" rel="noopener">Apply on WhatsApp</a>
+          <a class="btn btn--glass" href="tel:+919990302693">Call to apply</a>
+        </div>
+      </div>
+
+      <div class="glass note-card" data-anim="card">
+        <h3>What to send us</h3>
+        <p>Tap the button and WhatsApp opens with these already listed — just fill them in:</p>
+        <ol class="numlist">
+          <li>Your name</li>
+          <li>Role — nurse, attendant or physiotherapist</li>
+          <li>Qualification, if any</li>
+          <li>Years of experience</li>
+          <li>The area you live in</li>
+        </ol>
+        <p class="note-card__foot">We reply to every message, and we will tell you honestly if there
+          is nothing suitable right now.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ CALLBACK ══════════════ -->
+<section class="sec sec--tight">
+  <div class="wrap">
+    <form class="glass callback" id="callback" novalidate data-anim="head">
+      <div class="callback__copy">
+        <h3>Not sure which service you need?</h3>
+        <p>Leave your name and number — we'll call you back and talk it through. No obligation.</p>
+      </div>
+      <div class="callback__fields">
+        <input name="cbname" type="text" aria-label="Your name" placeholder="Your name" required>
+        <input name="cbphone" type="tel" inputmode="tel" aria-label="Phone number" placeholder="Phone number" required>
+        <button class="btn btn--gold" type="submit">Request a call</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ══════════════ BOOKING ══════════════ -->
+<section class="sec sec--dark" id="book">
+  <div class="wrap contact">
+    <div class="contact__info" data-anim="head">
+      <p class="eyebrow eyebrow--gold">Book care</p>
+      <h2>Tell us what you need, and for how long</h2>
+      <p class="sec__sub">Fill this in and it will open WhatsApp with your booking details written out,
+        ready for you to send. Prefer to talk? The line is open 24×7.</p>
+
+      <ul class="contact__list">
+        <li>
+          <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.25 1z"/></svg></span>
+          <div><small>Phone · 24×7</small><a href="tel:+919990302693">+91 99903 02693</a></div>
+        </li>
+        <li>
+          <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2m8 7L4.4 6.5 4 6v.6l8 4.8 8-4.8V6l-.4.5z"/></svg></span>
+          <div><small>Email</small><a href="mailto:jaihomecareservice@gmail.com">jaihomecareservice@gmail.com</a></div>
+        </li>
+        <li>
+          <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2m6.9 9h-3a15 15 0 0 0-1.2-5.3A8 8 0 0 1 18.9 11M12 4.2A13 13 0 0 1 13.8 11h-3.6A13 13 0 0 1 12 4.2M5.1 11a8 8 0 0 1 4.2-5.3A15 15 0 0 0 8.1 11m0 2a15 15 0 0 0 1.2 5.3A8 8 0 0 1 5.1 13m6.9 6.8A13 13 0 0 1 10.2 13h3.6A13 13 0 0 1 12 19.8m2.7-1.5a15 15 0 0 0 1.2-5.3h3a8 8 0 0 1-4.2 5.3"/></svg></span>
+          <div><small>All our links</small><a href="https://linktr.ee/jaihomecareservice" target="_blank" rel="noopener">linktr.ee/jaihomecareservice</a></div>
+        </li>
+      </ul>
+    </div>
+
+    <form class="glass glass--form form" id="booking" novalidate data-anim="head">
+      <h3>Booking request</h3>
+
+      <div class="row">
+        <label>Patient / your name
+          <input name="name" type="text" autocomplete="name" required placeholder="e.g. Ramesh Kumar">
+        </label>
+        <label>Phone number
+          <input name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="10-digit mobile">
+        </label>
+      </div>
+
+      <label>Which service do you need?
+        <select name="need" required>
+          <option value="">Please choose…</option>
+          <optgroup label="Medical &amp; Clinical Care">
+            <option>Physiotherapy &amp; mobility support</option>
+            <option>Post-surgery recovery care</option>
+            <option>Wound care &amp; dressing</option>
+            <option>Medical vitals monitoring</option>
+            <option>Medication management</option>
+          </optgroup>
+          <optgroup label="Personal Assistance">
+            <option>Bathing &amp; personal hygiene</option>
+            <option>Toileting &amp; grooming support</option>
+            <option>Feeding &amp; meal support</option>
+            <option>Mobility &amp; walking assistance</option>
+          </optgroup>
+          <option>Medical equipment only</option>
+          <option>Not sure — please advise</option>
+        </select>
+      </label>
+
+      <fieldset class="days">
+        <legend>For how many days do you need care?</legend>
+        <div class="days__row">
+          <input name="days" type="number" min="1" max="365" inputmode="numeric" required placeholder="Number of days">
+          <span class="days__unit">days</span>
+        </div>
+        <div class="quick" role="group" aria-label="Quick duration presets">
+          <button type="button" data-days="1">1 day</button>
+          <button type="button" data-days="7">1 week</button>
+          <button type="button" data-days="15">15 days</button>
+          <button type="button" data-days="30">1 month</button>
+          <button type="button" data-days="90">3 months</button>
+        </div>
+        <label class="chk"><input type="checkbox" name="ongoing"> Ongoing / not sure yet</label>
+      </fieldset>
+
+      <div class="row">
+        <label>Hours of care per day
+          <select name="hours" required>
+            <option value="">Please choose…</option>
+            <option>Single visit (1–2 hours)</option>
+            <option>Half day (6 hours)</option>
+            <option>12 hours</option>
+            <option>24 hours (live-in)</option>
+          </select>
+        </label>
+        <label>Preferred start date
+          <input name="start" type="date">
+        </label>
+      </div>
+
+      <label>Area / locality
+        <input name="area" type="text" placeholder="e.g. Sector 12, Dwarka">
+      </label>
+
+      <label>Anything else we should know?
+        <textarea name="note" rows="3" placeholder="Condition, mobility level, equipment already at home…"></textarea>
+      </label>
+
+      <button class="btn btn--gold btn--full btn--lg" type="submit">
+        <svg viewBox="0 0 24 24" class="i" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2m0 2a8 8 0 1 1-4.1 14.9l-.4-.2-2.6.7.7-2.5-.2-.4A8 8 0 0 1 12 4m-3.3 4.2c-.2 0-.5.1-.7.3-.3.3-.9.8-.9 2s.9 2.3 1 2.5c.1.2 1.7 2.7 4.2 3.7 2 .8 2.5.7 2.9.6.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3-1.5-.7c-.2 0-.4-.1-.5.1l-.7 1c-.2.1-.3.2-.5 0a6.8 6.8 0 0 1-2-1.2 7.4 7.4 0 0 1-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.5.3-.4v-.5l-.7-1.6c-.2-.4-.4-.4-.5-.4z"/></svg>
+        Send booking on WhatsApp
+      </button>
+      <p class="form__alt">or call <a href="tel:+919990302693">+91 99903 02693</a> — answered 24×7</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__inner">
+    <a class="brand brand--foot" href="#top">
+      <img src="assets/logo.svg" alt="" width="42" height="42">
+      <span class="brand__txt"><strong>JAI</strong><small>Home Care Services</small></span>
+    </a>
+    <p class="foot__tag">Home is the best place to heal.</p>
+    <p class="foot__links">
+      <a href="tel:+919990302693">+91 99903 02693</a> ·
+      <a href="mailto:jaihomecareservice@gmail.com">jaihomecareservice@gmail.com</a> ·
+      <a href="https://linktr.ee/jaihomecareservice" target="_blank" rel="noopener">linktr.ee/jaihomecareservice</a>
+    </p>
+    <p class="foot__copy">© <span id="yr">2026</span> JAI Home Care Services · 24×7 medical assistance at home</p>
+  </div>
+</footer>
+
+<div class="fab" aria-label="Quick contact">
+  <a class="fab__btn fab__btn--wa" href="https://wa.me/919990302693" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2m0 2a8 8 0 1 1-4.1 14.9l-.4-.2-2.6.7.7-2.5-.2-.4A8 8 0 0 1 12 4m-3.3 4.2c-.2 0-.5.1-.7.3-.3.3-.9.8-.9 2s.9 2.3 1 2.5c.1.2 1.7 2.7 4.2 3.7 2 .8 2.5.7 2.9.6.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3-1.5-.7c-.2 0-.4-.1-.5.1l-.7 1c-.2.1-.3.2-.5 0a6.8 6.8 0 0 1-2-1.2 7.4 7.4 0 0 1-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.5.3-.4v-.5l-.7-1.6c-.2-.4-.4-.4-.5-.4z"/></svg>
+  </a>
+  <a class="fab__btn fab__btn--call" href="tel:+919990302693" aria-label="Call us — available 24×7">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.25 1z"/></svg>
+  </a>
+</div>
+
+<script type="module" src="assets/app.js"></script>
+</body>
+</html>
